@@ -1,0 +1,48 @@
+
+body{
+    text-align: center;
+    background-image: url(bg.jpg);
+  font-weight: 100;
+
+}
+.lol{
+  height: 360px;
+  width: 500px;
+}
+
+
+ #clockdiv{
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+
+}
+#clockdiv > div{
+    height: 220px;
+    width: 220px;
+    padding: 20px;
+    border-radius: 2px;
+    background-color:rgba(255,69,0, 0.5);
+    display: inline-block;
+}
+#clockdiv div > span{
+  height: 125px;
+  width: 140px;
+    padding: 30px;
+    font-size: 80px;
+    border-radius: 100px;
+    background-color:rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+
+h1{
+  color: #F0EBCC;
+  font-size: 150px;
+  font-family:'Wallpoet', cursive;
+}
+
+.vanish{
+  display: none;
+  visibility: collapse;
+}

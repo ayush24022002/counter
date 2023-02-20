@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Ulti Ginti</title>
+    <link rel="stylesheet" href="style\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Black+Ops+One&family=Wallpoet&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <img class="lol" src="style/logo.png" alt="style/logo.png">
+    <br />
+    <div id="clockdiv">
+        <div>
+            <span class="days" id="day" style="font-family: 'Black Ops One', cursive;"></span>
+            <div class="smalltext" style="font-family: 'Audiowide', cursive;">DAYS</div>
+        </div>
+        <div>
+            <span class="hours" id="hour" style="font-family: 'Black Ops One', cursive;"></span>
+            <div class="smalltext" style="font-family: 'Audiowide', cursive;">HOURS</div>
+        </div>
+        <div>
+            <span class="minutes" id="minute" style="font-family: 'Black Ops One', cursive;"></span>
+            <div class="smalltext" style="font-family: 'Audiowide', cursive;">MINUTES</div>
+        </div>
+        <div>
+            <span class="seconds" id="second" style="font-family: 'Black Ops One', cursive;"></span>
+            <div class="smalltext" style="font-family: 'Audiowide', cursive;">SECONDS</div>
+        </div>
+    </div>
+    <div>
+        <h1 id="timeup" class="vanish">SAMAY SAMAPT!!!</h1>
+    </div>
+    <script  charset="utf-8">
+        var dime = prompt("Set the date and time as: Month Day, Year Hours:Minutes:Seconds");
+
+        var deadline = new Date(dime).getTime();
+
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var t = deadline - now;
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((t % (1000 * 60)) / 1000);
+            document.getElementById("day").innerHTML = days;
+            document.getElementById("hour").innerHTML = hours;
+            document.getElementById("minute").innerHTML = minutes;
+            document.getElementById("second").innerHTML = seconds;
+            if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
+
+                document.getElementById("clockdiv").classList.add("vanish");
+                document.getElementById("timeup").classList.remove("vanish");
+
+                exit();
+            }
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
